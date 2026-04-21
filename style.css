@@ -219,3 +219,35 @@ select {
   object-fit: cover; /* 이미지가 비율에 맞게 꽉 차도록 */
   border: 2px solid #ddd;
 }
+
+/* 갤러리 이미지 목록 컨테이너 */
+.thumb-list {
+  display: grid; /* 그리드 레이아웃 적용 */
+  grid-template-columns: repeat(
+    auto-fill,
+    minmax(100px, 1fr)
+  ); /* 화면 너비에 맞춰 자동 배열 */
+  gap: 15px; /* 이미지 사이의 간격 */
+  margin-top: 30px;
+  justify-items: center; /* 아이템 중앙 정렬 */
+}
+
+/* 썸네일 이미지 스타일 */
+.thumb-list img {
+  width: 100px;
+  height: 100px;
+  border-radius: 12px !important; /* 원형(50%) 설정을 무시하고 사각형으로 고정 */
+  border: 2px solid #eee;
+  cursor: pointer;
+  object-fit: cover; /* 이미지가 찌그러지지 않게 꽉 채움 */
+  margin: 0; /* 기존의 마진 초기화 */
+  transition:
+    transform 0.2s,
+    border-color 0.2s;
+}
+
+/* 마우스를 올렸을 때 효과 */
+.thumb-list img:hover {
+  transform: scale(1.05); /* 살짝 커지는 효과 */
+  border-color: #4caf50; /* 강조 색상 */
+}
